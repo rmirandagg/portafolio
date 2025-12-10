@@ -5,20 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portafolio profesional de dashboards en Power BI y Excel - Análisis de datos y visualización">
     <meta name="keywords" content="Power BI, Excel, Dashboards, Data Analytics, Visualización de Datos">
-    <meta name="author" content="Papu">
-    
-    <!-- Open Graph para redes sociales -->
-    <meta property="og:title" content="Mi Portafolio de Dashboards">
-    <meta property="og:description" content="Análisis de Datos & Visualización Profesional">
-    <meta property="og:type" content="website">
+    <meta name="author" content="Tu Nombre">
     
     <title>Mi Portafolio de Dashboards | Power BI & Excel</title>
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- Favicon (opcional) -->
-    <!-- <link rel="icon" type="image/png" href="assets/favicon.png"> -->
 </head>
 <body>
     <!-- Fondo animado -->
@@ -34,15 +26,15 @@
             <p class="subtitle">Análisis de Datos & Visualización Profesional</p>
             <div class="header-stats">
                 <div class="stat-item">
-                    <span class="stat-number" id="total-projects">0</span>
+                    <span class="stat-number">4</span>
                     <span class="stat-label">Proyectos</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" id="powerbi-count">0</span>
+                    <span class="stat-number">2</span>
                     <span class="stat-label">Power BI</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" id="excel-count">0</span>
+                    <span class="stat-number">2</span>
                     <span class="stat-label">Excel</span>
                 </div>
             </div>
@@ -51,99 +43,154 @@
 
     <!-- Tabs de navegación -->
     <nav class="tabs" role="navigation" aria-label="Filtros de proyectos">
-        <button class="tab-btn active" onclick="showTab('all')" aria-label="Mostrar todos los proyectos">
-            Todos
-        </button>
-        <button class="tab-btn" onclick="showTab('powerbi')" aria-label="Mostrar solo Power BI">
-            Power BI
-        </button>
-        <button class="tab-btn" onclick="showTab('excel')" aria-label="Mostrar solo Excel">
-            Excel
-        </button>
+        <button class="tab-btn active" onclick="showTab('all')">Todos</button>
+        <button class="tab-btn" onclick="showTab('powerbi')">Power BI</button>
+        <button class="tab-btn" onclick="showTab('excel')">Excel</button>
     </nav>
 
     <!-- Contenedor principal -->
     <main class="container">
-        <div id="all-projects">
-            <!-- Sección Power BI -->
-            <section>
-                <h2 class="section-title">📊 Power BI Dashboards</h2>
-                <div id="powerbi-grid" class="projects-grid" role="list"></div>
-            </section>
+        
+        <!-- ========================================
+             SECCIÓN POWER BI - 2 DASHBOARDS
+             ======================================== -->
+        <section id="powerbi-section">
+            <h2 class="section-title">📊 Power BI Dashboards</h2>
+            
+            <!-- Dashboard Power BI #1 -->
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <span class="dashboard-badge powerbi">Power BI</span>
+                    <h3 class="dashboard-title">Dashboard de Ventas 2024</h3>
+                    <p class="dashboard-description">
+                        Análisis completo de ventas con KPIs principales, tendencias mensuales y comparativas por región.
+                    </p>
+                </div>
+                <div class="dashboard-iframe-wrapper">
+                    <!-- ⬇️ AQUÍ VA TU IFRAME DE POWER BI #1 ⬇️ -->
+                    <iframe 
+                        title="Dashboard de Ventas 2024"
+                        src="TU_ENLACE_POWERBI_1_AQUI"
+                        frameborder="0" 
+                        allowFullScreen="true">
+                    </iframe>
+                    <!-- ⬆️ REEMPLAZA "TU_ENLACE_POWERBI_1_AQUI" con tu enlace real ⬆️ -->
+                    
+                    <!-- Placeholder (se oculta automáticamente cuando agregas el iframe real) -->
+                    <div class="dashboard-placeholder">
+                        <div class="placeholder-icon">📊</div>
+                        <p class="placeholder-text">
+                            <strong>Paso 1:</strong> Publica tu dashboard en Power BI Service<br>
+                            <strong>Paso 2:</strong> Ve a Archivo → Insertar informe → Publicar en la web<br>
+                            <strong>Paso 3:</strong> Copia el enlace del src del iframe<br>
+                            <strong>Paso 4:</strong> Reemplaza "TU_ENLACE_POWERBI_1_AQUI" arriba
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Sección Excel -->
-            <section>
-                <h2 class="section-title">📈 Excel Dashboards</h2>
-                <div id="excel-grid" class="projects-grid" role="list"></div>
-            </section>
-        </div>
+            <!-- Dashboard Power BI #2 -->
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <span class="dashboard-badge powerbi">Power BI</span>
+                    <h3 class="dashboard-title">Dashboard Financiero</h3>
+                    <p class="dashboard-description">
+                        Visualización de estados financieros, flujo de caja y proyecciones trimestrales con indicadores clave.
+                    </p>
+                </div>
+                <div class="dashboard-iframe-wrapper">
+                    <!-- ⬇️ AQUÍ VA TU IFRAME DE POWER BI #2 ⬇️ -->
+                    <iframe 
+                        title="Dashboard Financiero"
+                        src="TU_ENLACE_POWERBI_2_AQUI"
+                        frameborder="0" 
+                        allowFullScreen="true">
+                    </iframe>
+                    <!-- ⬆️ REEMPLAZA "TU_ENLACE_POWERBI_2_AQUI" con tu enlace real ⬆️ -->
+                    
+                    <div class="dashboard-placeholder">
+                        <div class="placeholder-icon">📊</div>
+                        <p class="placeholder-text">
+                            <strong>Paso 1:</strong> Publica tu dashboard en Power BI Service<br>
+                            <strong>Paso 2:</strong> Ve a Archivo → Insertar informe → Publicar en la web<br>
+                            <strong>Paso 3:</strong> Copia el enlace del src del iframe<br>
+                            <strong>Paso 4:</strong> Reemplaza "TU_ENLACE_POWERBI_2_AQUI" arriba
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <!-- Botón agregar proyecto -->
-        <button class="add-project-btn" onclick="openModal()" aria-label="Agregar nuevo proyecto">
-            <span style="font-size: 1.5rem;">+</span>
-            Agregar Nuevo Proyecto
-        </button>
+        <!-- ========================================
+             SECCIÓN EXCEL - 2 DASHBOARDS
+             ======================================== -->
+        <section id="excel-section">
+            <h2 class="section-title">📈 Excel Dashboards</h2>
+            
+            <!-- Dashboard Excel #1 -->
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <span class="dashboard-badge excel">Excel</span>
+                    <h3 class="dashboard-title">Dashboard de Inventario</h3>
+                    <p class="dashboard-description">
+                        Control de inventario con alertas de stock, rotación de productos y análisis de reabastecimiento.
+                    </p>
+                </div>
+                <div class="dashboard-iframe-wrapper">
+                    <!-- ⬇️ AQUÍ VA TU IFRAME DE EXCEL #1 ⬇️ -->
+                    <iframe 
+                        title="Dashboard de Inventario"
+                        src="TU_ENLACE_EXCEL_1_AQUI"
+                        frameborder="0">
+                    </iframe>
+                    <!-- ⬆️ REEMPLAZA "TU_ENLACE_EXCEL_1_AQUI" con tu enlace de OneDrive/SharePoint ⬆️ -->
+                    
+                    <div class="dashboard-placeholder">
+                        <div class="placeholder-icon">📈</div>
+                        <p class="placeholder-text">
+                            <strong>Paso 1:</strong> Sube tu Excel a OneDrive<br>
+                            <strong>Paso 2:</strong> Haz clic derecho → Compartir<br>
+                            <strong>Paso 3:</strong> Configura "Cualquiera con el enlace"<br>
+                            <strong>Paso 4:</strong> Copia el enlace y reemplaza "TU_ENLACE_EXCEL_1_AQUI"<br>
+                            <em>Nota: También puedes usar el enlace directo de Excel Online</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Excel #2 -->
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <span class="dashboard-badge excel">Excel</span>
+                    <h3 class="dashboard-title">Dashboard de KPIs Operativos</h3>
+                    <p class="dashboard-description">
+                        Seguimiento de indicadores operativos clave, métricas de productividad y cumplimiento de objetivos.
+                    </p>
+                </div>
+                <div class="dashboard-iframe-wrapper">
+                    <!-- ⬇️ AQUÍ VA TU IFRAME DE EXCEL #2 ⬇️ -->
+                    <iframe 
+                        title="Dashboard de KPIs Operativos"
+                        src="TU_ENLACE_EXCEL_2_AQUI"
+                        frameborder="0">
+                    </iframe>
+                    <!-- ⬆️ REEMPLAZA "TU_ENLACE_EXCEL_2_AQUI" con tu enlace de OneDrive/SharePoint ⬆️ -->
+                    
+                    <div class="dashboard-placeholder">
+                        <div class="placeholder-icon">📈</div>
+                        <p class="placeholder-text">
+                            <strong>Paso 1:</strong> Sube tu Excel a OneDrive<br>
+                            <strong>Paso 2:</strong> Haz clic derecho → Compartir<br>
+                            <strong>Paso 3:</strong> Configura "Cualquiera con el enlace"<br>
+                            <strong>Paso 4:</strong> Copia el enlace y reemplaza "TU_ENLACE_EXCEL_2_AQUI"<br>
+                            <em>Nota: También puedes usar el enlace directo de Excel Online</em>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
-
-    <!-- Modal para agregar proyectos -->
-    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <div class="modal-content">
-            <h2 id="modal-title">✨ Agregar Nuevo Proyecto</h2>
-            <form id="project-form">
-                <div class="form-group">
-                    <label for="project-type">Tipo de Proyecto:</label>
-                    <select id="project-type" name="project-type" required>
-                        <option value="">Selecciona un tipo...</option>
-                        <option value="powerbi">📊 Power BI</option>
-                        <option value="excel">📈 Excel</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="project-title">Título del Proyecto:</label>
-                    <input 
-                        type="text" 
-                        id="project-title" 
-                        name="project-title"
-                        placeholder="Ej: Dashboard de Ventas 2024" 
-                        required
-                        maxlength="100"
-                    >
-                </div>
-                
-                <div class="form-group">
-                    <label for="project-description">Descripción:</label>
-                    <textarea 
-                        id="project-description" 
-                        name="project-description"
-                        placeholder="Describe tu proyecto..." 
-                        required
-                        maxlength="500"
-                    ></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="project-url">URL del Dashboard:</label>
-                    <input 
-                        type="url" 
-                        id="project-url" 
-                        name="project-url"
-                        placeholder="https://..." 
-                        required
-                    >
-                </div>
-                
-                <div class="form-buttons">
-                    <button type="submit" class="btn btn-primary">
-                        Guardar Proyecto
-                    </button>
-                    <button type="button" class="btn btn-secondary" onclick="closeModal()">
-                        Cancelar
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer>

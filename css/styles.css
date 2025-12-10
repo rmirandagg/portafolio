@@ -1,7 +1,6 @@
 /* ===================================
    PORTAFOLIO DE DASHBOARDS - STYLES
-   Autor: Tu Nombre
-   Versión: 1.0
+   Versión: 2.0 - Con iframes
    =================================== */
 
 /* === RESET Y BASE === */
@@ -230,13 +229,21 @@ h1 {
     background-clip: text;
 }
 
-/* === GRID DE PROYECTOS === */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 2rem;
+/* === SECCIONES === */
+section {
+    margin-bottom: 4rem;
+}
+
+/* === CONTENEDORES DE DASHBOARD === */
+.dashboard-container {
+    background: rgba(30, 41, 59, 0.5);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    backdrop-filter: blur(10px);
     margin-bottom: 3rem;
-    animation: fadeInUp 1s ease-out;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: fadeInUp 0.8s ease-out;
 }
 
 @keyframes fadeInUp {
@@ -250,384 +257,134 @@ h1 {
     }
 }
 
-/* === TARJETAS DE PROYECTO === */
-.project-card {
-    background: rgba(30, 41, 59, 0.5);
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(99, 102, 241, 0.2);
-    backdrop-filter: blur(10px);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-}
-
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #6366f1, #a855f7, #ec4899);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-.project-card:hover::before {
-    transform: scaleX(1);
-}
-
-.project-card:hover {
-    transform: translateY(-15px) scale(1.02);
+.dashboard-container:hover {
+    transform: translateY(-5px);
     border-color: rgba(99, 102, 241, 0.5);
     box-shadow: 0 20px 60px rgba(99, 102, 241, 0.3);
 }
 
-.project-header {
+/* === HEADER DEL DASHBOARD === */
+.dashboard-header {
     padding: 2rem;
-    background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(168, 85, 247, 0.2));
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.15));
+    border-bottom: 1px solid rgba(99, 102, 241, 0.2);
 }
 
-.project-header::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.project-card:hover .project-header::after {
-    opacity: 1;
-}
-
-.project-header.excel {
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.2));
-}
-
-.project-type {
+.dashboard-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(99, 102, 241, 0.2);
+    border: 1px solid rgba(99, 102, 241, 0.4);
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #a5b4fc;
 }
 
-.project-type::before {
+.dashboard-badge.powerbi::before {
     content: '📊';
     font-size: 1.2rem;
 }
 
-.project-type.excel::before {
+.dashboard-badge.excel {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: rgba(16, 185, 129, 0.4);
+    color: #6ee7b7;
+}
+
+.dashboard-badge.excel::before {
     content: '📈';
+    font-size: 1.2rem;
 }
 
-.project-title {
-    font-size: 1.6rem;
+.dashboard-title {
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
     color: #fff;
+    margin-bottom: 0.5rem;
 }
 
-.project-body {
-    padding: 2rem;
-}
-
-.project-description {
+.dashboard-description {
     color: #94a3b8;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
     font-size: 1rem;
+    line-height: 1.6;
 }
 
-.project-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+/* === WRAPPER DEL IFRAME === */
+.dashboard-iframe-wrapper {
     position: relative;
+    width: 100%;
+    height: 600px;
+    background: rgba(15, 23, 42, 0.5);
     overflow: hidden;
 }
 
-.project-link::before {
-    content: '';
+.dashboard-iframe-wrapper iframe {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.project-link:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-.project-link:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-}
-
-.project-link.excel {
-    background: linear-gradient(135deg, #10b981, #059669);
-}
-
-.project-link::after {
-    content: '→';
-    font-size: 1.2rem;
-    transition: transform 0.3s;
-}
-
-.project-link:hover::after {
-    transform: translateX(5px);
-}
-
-/* === BOTÓN AGREGAR PROYECTO === */
-.add-project-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    margin: 3rem auto;
-    padding: 1.2rem 2.5rem;
-    background: linear-gradient(135deg, #6366f1, #a855f7);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
-}
-
-.add-project-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.add-project-btn:hover::before {
-    width: 400px;
-    height: 400px;
-}
-
-.add-project-btn:hover {
-    transform: scale(1.1) translateY(-5px);
-    box-shadow: 0 15px 50px rgba(99, 102, 241, 0.6);
-}
-
-.add-project-btn:active {
-    transform: scale(1.05) translateY(-2px);
-}
-
-/* === MODAL === */
-.modal {
-    display: none;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
+    border: none;
+    z-index: 2;
+}
+
+/* === PLACEHOLDER === */
+.dashboard-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.modal.active {
-    display: flex;
-}
-
-.modal-content {
-    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
-    padding: 2.5rem;
-    border-radius: 20px;
-    max-width: 550px;
-    width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
-    border: 1px solid rgba(99, 102, 241, 0.3);
-    box-shadow: 0 25px 80px rgba(99, 102, 241, 0.3);
-    animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-@keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.modal-content h2 {
-    background: linear-gradient(135deg, #6366f1, #a855f7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-}
-
-/* === FORMULARIO === */
-.form-group {
-    margin-bottom: 1.5rem;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 0.7rem;
-    color: #e2e8f0;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width: 100%;
-    padding: 1rem;
-    background: rgba(15, 23, 42, 0.6);
-    border: 2px solid rgba(99, 102, 241, 0.3);
-    border-radius: 12px;
-    font-size: 1rem;
-    font-family: inherit;
-    color: #fff;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
     background: rgba(15, 23, 42, 0.8);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.form-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-/* === BOTONES === */
-.btn {
-    flex: 1;
-    padding: 1rem;
-    border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%);
-    transition: width 0.6s, height 0.6s;
-}
-
-.btn:hover::before {
-    width: 300px;
-    height: 300px;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, #6366f1, #a855f7);
-    color: white;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-}
-
-.btn-secondary {
-    background: rgba(71, 85, 105, 0.5);
-    color: #e2e8f0;
-    border: 2px solid rgba(99, 102, 241, 0.3);
-}
-
-.btn-secondary:hover {
-    background: rgba(71, 85, 105, 0.8);
-    border-color: #6366f1;
-}
-
-/* === ESTADO VACÍO === */
-.empty-state {
+    backdrop-filter: blur(10px);
+    padding: 3rem;
     text-align: center;
-    padding: 4rem 2rem;
-    color: #64748b;
-    grid-column: 1 / -1;
+    z-index: 1;
 }
 
-.empty-state-icon {
+/* Ocultar placeholder cuando el iframe tiene src válido */
+.dashboard-iframe-wrapper iframe[src]:not([src=""]):not([src*="TU_ENLACE"]) ~ .dashboard-placeholder {
+    display: none;
+}
+
+.placeholder-icon {
     font-size: 5rem;
-    margin-bottom: 1rem;
-    opacity: 0.5;
+    margin-bottom: 1.5rem;
+    opacity: 0.6;
+    animation: pulse 2s ease-in-out infinite;
 }
 
-.empty-state-text {
-    font-size: 1.2rem;
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.placeholder-text {
+    color: #94a3b8;
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+.placeholder-text strong {
+    color: #6366f1;
+    display: block;
+    margin-top: 1rem;
+}
+
+.placeholder-text em {
+    color: #64748b;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 0.5rem;
 }
 
 /* === FOOTER === */
@@ -668,10 +425,6 @@ footer p {
         font-size: 2.5rem;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
     .tabs {
         flex-direction: column;
         max-width: 300px;
@@ -689,8 +442,24 @@ footer p {
         font-size: 2rem;
     }
 
-    .modal-content {
+    .dashboard-header {
         padding: 1.5rem;
+    }
+
+    .dashboard-title {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-iframe-wrapper {
+        height: 400px;
+    }
+
+    .placeholder-icon {
+        font-size: 3rem;
+    }
+
+    .placeholder-text {
+        font-size: 0.9rem;
     }
 }
 
@@ -703,16 +472,11 @@ footer p {
         font-size: 1rem;
     }
 
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    .dashboard-iframe-wrapper {
+        height: 350px;
     }
 
-    .project-header {
-        padding: 1.5rem;
-    }
-
-    .project-body {
-        padding: 1.5rem;
+    .dashboard-placeholder {
+        padding: 2rem 1rem;
     }
 }
