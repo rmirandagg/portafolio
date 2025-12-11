@@ -313,7 +313,7 @@ section {
     line-height: 1.6;
 }
 
-/* === WRAPPER DEL IFRAME === */
+/* === WRAPPER DEL IFRAME POWER BI=== */
 .dashboard-iframe-wrapper {
     position: relative;
     width: 100%;
@@ -331,6 +331,15 @@ section {
     border: none;
     z-index: 2;
 }
+
+
+/* === WRAPPER DEL IFRAME EXCEL === */
+.dashboard-iframe-wrapper--tall {
+    height: 1200px;
+}
+
+
+
 
 /* === PLACEHOLDER === */
 .dashboard-placeholder {
