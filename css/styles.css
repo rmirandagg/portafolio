@@ -336,6 +336,7 @@ section {
 /* === WRAPPER DEL IFRAME EXCEL === */
 .dashboard-iframe-wrapper--tall {
     height: 740px;
+    width: 80%;
 }
 
 
